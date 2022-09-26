@@ -1,7 +1,13 @@
 public class AnalyseMood {
 
+        String message;
+             //Parameterized constructor
+        AnalyseMood(String message){
+                this.message=message;
+          }
+
 	//method to analyse mood by reading string
-	public String moodAnalyser(String message) {
+	public String moodAnalyser() {
 		if (message.contains("Happy")) {
 			return "Happy";
 		}
@@ -13,13 +19,5 @@ public class AnalyseMood {
                 else {
 			return null;
 		}
-	}
-
-	public static void main(String[] args) {
-		AnalyseMood analyse = new AnalyseMood();
-		String moodHappy = analyse.moodAnalyser("I am Happy");
-		System.out.println(moodHappy);
-		String moodSad = analyse.moodAnalyser("I am Sad");
-		System.out.println(moodSad);
 	}
 }
