@@ -8,6 +8,7 @@ public class AnalyseMood {
 
 	//method to analyse mood by reading string
 	public String moodAnalyser() {
+                try{
 		if (message.contains("Happy")) {
 			return "Happy";
 		}
@@ -16,8 +17,15 @@ public class AnalyseMood {
 		}
                 else if(message.contains("any")) {
                         return "Happy";
-                else {
-			return null;
 		}
+                }catch(Exception e){
+                 //when user provides null input, handling the exception by returning Happy
+                       return "Happy";
+                }
+                       return message;
 	}
+	public static void main(String[] args) {
+		AnalyseMood obj = new AnalyseMood(null);
+                System.out.println(obj.moodAnalyser());
+       }
 }
