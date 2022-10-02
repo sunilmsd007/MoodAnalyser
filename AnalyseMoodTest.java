@@ -4,28 +4,13 @@ import org.junit.Test;
 public class AnalyseMoodTest {
 
 	@Test
-	public void givenMessageShouldReturnSad() {
-		AnalyseMood analyse = new AnalyseMood("I am in Sad Mood");
-		String actualResult = analyse.moodAnalyser();
-		Assert.assertEquals("Sad", actualResult);
+	public void messageShouldBeInvalidMood() {
+		AnalyseMood testmood = new AnalyseMood(null);
+		try {
+			testmood.moodAnalyzer();
+		} catch (Exception e) {
+			Assert.assertEquals("Invalid Mood", e.getMessage());
+		}
 	}
-        @Test
-        public void givenMessageShouldReturnHappy() {
-                AnalyseMood analyse = new AnalyseMood("I am in Happy Mood");
-                String actualResult = analyse.moodAnalyser();
-                Assert.assertEquals("Happy", actualResult);
-        }
-         @Test
-        public void givenMessageAnyShouldReturnHappy() {
-                AnalyseMood analyse = new AnalyseMood("I am in any Mood");
-                String actualResult = analyse.moodAnalyser();
-                Assert.assertEquals("Happy", actualResult);
-        }
-         @Test
-        public void givenMessageNullShouldReturnHappy() {
-                AnalyseMood analyse = new AnalyseMood(Null);
-                String actualResult = analyse.moodAnalyser();
-                Assert.assertEquals("Happy", actualResult);
-        }
 
 }
